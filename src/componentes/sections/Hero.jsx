@@ -74,10 +74,10 @@ const Hero = () => {
 
                 <div className="relative rounded-2xl overflow-hidden m-[1px] h-[calc(100%-2px)]">
                   <img
-                    src="/images/my-img.png"
-                    alt="Hero Image"
-                    className="w-full h-full object-cover"
-                  />
+  src={`${import.meta.env.BASE_URL}images/my-img2.png`}
+  alt="Hero Image"
+  className="w-full h-full object-cover"
+/>
                 </div>
 
                 <div className="absolute bottom-6 left-6 z-20">
