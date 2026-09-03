@@ -167,8 +167,12 @@ app.get('/api/info', (req, res) => {
 // Projects API
 app.get('/api/projects', async (req, res) => {
   try {
-    const projects = await Project.find().sort({ _id: 1 });
-    res.json(projects.length > 0 ? projects : defaultProjects);
+    let projects = await Project.find().sort({ _id: 1 });
+    const hasAutoMechanica = projects.some(p => p.title && p.title.toLowerCase().includes('automechanica'));
+    if (!hasAutoMechanica) {
+      projects = [defaultProjects[0], ...projects];
+    }
+    res.json(projects);
   } catch (error) {
     console.error('Error fetching projects:', error.message);
     res.json(defaultProjects);

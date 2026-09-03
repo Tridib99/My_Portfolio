@@ -14,11 +14,20 @@ const Projects = () => {
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data) && data.length > 0) {
-          setProjectsList(data);
+          const merged = [...defaultProjects];
+          data.forEach(p => {
+            if (!merged.some(m => m.title.toLowerCase() === p.title.toLowerCase())) {
+              merged.push(p);
+            }
+          });
+          setProjectsList(merged);
+        } else {
+          setProjectsList(defaultProjects);
         }
       })
       .catch((err) => {
         console.log('Using default project dataset:', err);
+        setProjectsList(defaultProjects);
       });
   }, []);
 
