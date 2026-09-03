@@ -62,40 +62,40 @@ const Skill = mongoose.model('Skill', skillSchema);
 // --- Database Auto-Seeding --- //
 const defaultProjects = [
   {
+    title: 'AutoMechanica - Car Service Platform',
+    description: 'Full-stack automotive care platform featuring real-time appointment scheduling, instant cost calculation widget, category service filters, admin management portal, and Node/Express REST API backend.',
+    image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80',
+    category: 'Full Stack',
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Mongoose', 'REST API'],
+    github: 'https://github.com/Tridib99/car-service',
+    link: 'https://github.com/Tridib99/car-service'
+  },
+  {
     title: 'DevPulse Dashboard',
     description: 'Real-time modern analytics dashboard built for monitoring server metrics, database load, and microservices status.',
-    image: '/images/projects/my-img.png',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
     category: 'Web Apps',
     technologies: ['React', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB'],
-    github: 'https://github.com/example/devpulse',
-    link: 'https://example.com/devpulse'
+    github: 'https://github.com/Tridib99',
+    link: 'https://github.com/Tridib99'
   },
   {
     title: 'HyperStore E-Commerce Platform',
     description: 'High-performance digital marketplace featuring instant search, secure payment integration, cart management, and admin dashboard.',
-    image: '/images/projects/my-img2.png',
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80',
     category: 'Full Stack',
     technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind CSS'],
-    github: 'https://github.com/example/hyperstore',
-    link: 'https://example.com/hyperstore'
+    github: 'https://github.com/Tridib99',
+    link: 'https://github.com/Tridib99'
   },
   {
     title: 'Aesthetic UI System',
     description: 'A modular, highly customizable dark-themed React UI library with built-in animations, smooth micro-interactions, and gradient backgrounds.',
-    image: '/images/projects/my-img.png',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     category: 'UI Components',
     technologies: ['React', 'Tailwind CSS', 'Framer Motion', 'TypeScript'],
-    github: 'https://github.com/example/aesthetic-ui',
-    link: 'https://example.com/aesthetic-ui'
-  },
-  {
-    title: 'AI Prompt & Task Workflow Hub',
-    description: 'Productivity application enabling teams to automate workflows, manage prompt pipelines, and integrate AI assistant endpoints.',
-    image: '/images/projects/my-img2.png',
-    category: 'Web Apps',
-    technologies: ['React', 'Vite', 'Node.js', 'OpenAI API', 'Tailwind CSS'],
-    github: 'https://github.com/example/prompt-hub',
-    link: 'https://example.com/prompt-hub'
+    github: 'https://github.com/Tridib99',
+    link: 'https://github.com/Tridib99'
   }
 ];
 
@@ -114,6 +114,12 @@ const defaultSkills = [
 
 async function seedDatabaseIfEmpty() {
   try {
+    const existingAutoMechanica = await Project.findOne({ title: { $regex: /AutoMechanica/i } });
+    if (!existingAutoMechanica) {
+      await Project.create(defaultProjects[0]);
+      console.log('🌱 Seeded AutoMechanica Car Service project into MongoDB!');
+    }
+
     const projectCount = await Project.countDocuments();
     if (projectCount === 0) {
       await Project.insertMany(defaultProjects);
