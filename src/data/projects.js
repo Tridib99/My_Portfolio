@@ -42,6 +42,25 @@ export const projects = [
     link: "https://github.com/Tridib99",
     github: "https://github.com/Tridib99",
   },
+  {
+    id: 4,
+    title: "Aether - Intelligent Weather Web App",
+    description:
+      "Futuristic dark-themed MERN stack weather platform featuring real-time atmospheric metrics, live OpenWeatherMap API & AQI pollution integration, city search autocomplete, °C/°F unit toggle, and MongoDB saved locations.",
+    image:
+      "https://images.unsplash.com/photo-1592210454359-9043f067919b?auto=format&fit=crop&w=800&q=80",
+    category: "Full Stack",
+    technologies: [
+      "React 18",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "OpenWeather API",
+    ],
+    link: "https://tridib99.github.io/aether-weather-app/",
+    github: "https://github.com/Tridib99/aether-weather-app",
+  },
 ];
 
 export const categories = ["All", "Full Stack", "Web Apps", "UI Components"];
