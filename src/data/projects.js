@@ -16,7 +16,7 @@ export const projects = [
       "REST API",
     ],
     link: "https://tridib99.github.io/car-service/",
-    github: "https://tridib99.github.io/car-service/",
+    github: "https://github.com/Tridib99/car-service",
   },
   {
     id: 2,
