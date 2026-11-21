@@ -31,18 +31,6 @@ export const projects = [
     github: "https://github.com/Tridib99",
   },
   {
-    id: 3,
-    title: "GenX - Digital Agency Portal",
-    description:
-      "Sleek dark-themed marketing website built for digital agencies, showcasing responsive layouts, micro-animations, and fast page speeds.",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-    category: "UI Components",
-    technologies: ["React", "Tailwind CSS", "JavaScript"],
-    link: "https://github.com/Tridib99",
-    github: "https://github.com/Tridib99",
-  },
-  {
     id: 4,
     title: "Aether - Intelligent Weather Web App",
     description:
