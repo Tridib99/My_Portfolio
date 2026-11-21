@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Code, Menu, X, } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { NAV_LINKS, PERSONAL_INFO } from "../../utils/constants";
 import {useScrollSpy} from "../../hooks/useScrollSpy";
 
@@ -48,16 +48,19 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           
           {/* Logo */}
-          <div className="flex items-center gap-4">
-            <Code className="w-6 h-6 text-primary" />
-
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-              className="text-2xl font-bold bg-gradient-to-r from-primary via-primary/50 to-primary/30 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
-            >
-              {PERSONAL_INFO.name.split(" ")[0]}
-            </button>
-          </div>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="group flex items-center gap-3"
+            aria-label="Back to top"
+          >
+            <span className="relative grid h-12 w-12 place-items-center rounded-xl border border-primary/60 bg-gradient-to-br from-primary/25 via-black to-primary/10 text-xl font-black italic tracking-[-0.18em] text-primary shadow-[0_0_22px_rgba(141,255,105,0.24)] transition-all duration-300 group-hover:-rotate-3 group-hover:scale-105 group-hover:border-primary group-hover:text-white">
+              <span className="absolute left-[9px] top-[7px]">T</span>
+              <span className="absolute bottom-[7px] right-[8px] text-[13px] text-white">M</span>
+            </span>
+            <span className="text-2xl font-black tracking-[0.22em] bg-gradient-to-r from-primary via-primary/70 to-white/80 bg-clip-text text-transparent">
+              TRI
+            </span>
+          </button>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-7">

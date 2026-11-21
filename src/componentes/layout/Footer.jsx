@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, ArrowUp } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 import { PERSONAL_INFO, NAV_LINKS, SOCIAL_LINKS } from '../../utils/constants';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
@@ -22,9 +22,12 @@ const Footer = () => {
           {/* Logo & Tagline */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left gap-2">
             <div className="flex items-center gap-3">
-              <Code className="w-6 h-6 text-primary" />
-              <span className="text-2xl font-bold bg-gradient-to-r from-primary via-primary/60 to-primary/30 bg-clip-text text-transparent">
-                {PERSONAL_INFO.name}
+              <span className="relative grid h-12 w-12 place-items-center rounded-xl border border-primary/60 bg-gradient-to-br from-primary/25 via-black to-primary/10 text-xl font-black italic tracking-[-0.18em] text-primary shadow-[0_0_22px_rgba(141,255,105,0.24)]">
+                <span className="absolute left-[9px] top-[7px]">T</span>
+                <span className="absolute bottom-[7px] right-[8px] text-[13px] text-white">M</span>
+              </span>
+              <span className="text-2xl font-black tracking-[0.22em] bg-gradient-to-r from-primary via-primary/60 to-primary/30 bg-clip-text text-transparent">
+                TRI
               </span>
             </div>
             <p className="text-sm text-white/60 max-w-sm">

@@ -1,9 +1,9 @@
 export const PERSONAL_INFO = {
-  name: 'ASUS',
+  name: 'Tri',
   title: 'Software Engineer',
-  email: 'asus@example.com',
+  email: 'tridibofficial2002@gmail.com',
   phone: '+1234567890',
-  location: 'City, Country',
+  location: 'India',
   tagline: 'Building the future, one line of code at a time.',
   resume: 'https://example.com/resume.pdf',
   bio: [
@@ -13,10 +13,10 @@ export const PERSONAL_INFO = {
 };  
 
 export const SOCIAL_LINKS = {
-  github: 'https://github.com/asus',
-  linkedin: 'https://linkedin.com/in/asus',
-  instagram: 'https://instagram.com/asus',
-  facebook: 'https://facebook.com/asus'
+  github: 'https://github.com/Tridib99',
+  linkedin: 'https://linkedin.com/in/tridib',
+  instagram: 'https://instagram.com/tridib',
+  facebook: 'https://facebook.com/tridib'
 };
 
 export const NAV_LINKS = [

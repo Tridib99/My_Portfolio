@@ -151,9 +151,9 @@ app.get('/api/health', (req, res) => {
 // Personal Info API
 app.get('/api/info', (req, res) => {
   res.json({
-    name: 'ASUS Developer',
+    name: 'Tri',
     title: 'Full-Stack Software Engineer',
-    email: 'contact@example.com',
+    email: 'tridibofficial2002@gmail.com',
     phone: '+1 (555) 234-5678',
     location: 'San Francisco, CA',
     tagline: 'Building high-performance modern web apps and scalable backends with MongoDB.',
@@ -244,7 +244,11 @@ app.get('/api/contact', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Portfolio Express backend server running on http://localhost:${PORT}`);
-  console.log(`🍃 Target MongoDB URI for MongoDB Compass: ${MONGODB_URI}`);
-});
+export default app;
+
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`🚀 Portfolio Express backend server running on http://localhost:${PORT}`);
+    console.log(`🍃 Target MongoDB URI for MongoDB Compass: ${MONGODB_URI}`);
+  });
+}

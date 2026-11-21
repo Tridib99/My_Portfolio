@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Sparkles, Code2 } from 'lucide-react';
 import { projects as defaultProjects, categories as defaultCategories } from '../../data/projects';
 import ProjectCard from '../ui/ProjectCard';
@@ -6,32 +6,9 @@ import FadeIn from '../animations/FadeIn';
 import RadialGradientBackground from '../bacakgrounds/RadialGradientBackground';
 
 const Projects = () => {
-  const [projectsList, setProjectsList] = useState([]);
   const [activeCategory, setActiveCategory] = useState('All');
 
-  useEffect(() => {
-    fetch('/api/projects')
-      .then((res) => res.json())
-      .then((data) => {
-        if (Array.isArray(data) && data.length > 0) {
-          const merged = [...defaultProjects];
-          data.forEach(p => {
-            if (!merged.some(m => m.title.toLowerCase() === p.title.toLowerCase())) {
-              merged.push(p);
-            }
-          });
-          setProjectsList(merged);
-        } else {
-          setProjectsList(defaultProjects);
-        }
-      })
-      .catch((err) => {
-        console.log('Using default project dataset:', err);
-        setProjectsList(defaultProjects);
-      });
-  }, []);
-
-  const displayProjects = projectsList.length > 0 ? projectsList : defaultProjects;
+  const displayProjects = defaultProjects;
 
   const categories = defaultCategories.length > 0 ? defaultCategories : ['All', 'Web Apps', 'Full Stack', 'UI Components'];
 
